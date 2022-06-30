@@ -11,10 +11,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: thema.copyWith(
-        colorScheme: thema.colorScheme.copyWith(
-          primary: Colors.blue,
-        ),
-      ),
+          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          colorScheme: thema.colorScheme.copyWith(
+            primary: Colors.pink,
+            secondary: Colors.amber,
+          ),
+          textTheme: thema.textTheme.copyWith(
+            headline5: TextStyle(
+              fontFamily: 'Raleway',
+            ),
+            headline6: TextStyle(
+              fontFamily: 'RobotoCondensed',
+              fontSize: 20,
+              color: Colors.black,
+            ),
+          )),
       home: CategoriesScreen(),
     );
   }
