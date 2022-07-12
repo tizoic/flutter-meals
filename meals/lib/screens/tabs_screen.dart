@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals/components/main_drawer.dart';
 import 'package:meals/screens/categories_screen.dart';
 import 'package:meals/screens/favorite_screen.dart';
 
@@ -17,10 +18,7 @@ class _TabsScreenState extends State<TabsScreen> {
     FavoriteScreen(),
   ];
 
-  final List<String> titles = [
-    'Lista de Categorias',
-    'Meus Favoritos'
-  ];
+  final List<String> titles = ['Lista de Categorias', 'Meus Favoritos'];
 
   _selectScreen(int index) {
     setState(() {
@@ -34,6 +32,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(titles[_selectedScreenIndex]),
       ),
+      drawer: MainDrawer(),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
